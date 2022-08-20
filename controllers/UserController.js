@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 
 export const register = async (req, res) => {
     try {
-        const errors = validationResult(req)
+        const errors = validationResult(req) // получение валидации
 
         //валидация непройдена
         if(!errors.isEmpty()) {

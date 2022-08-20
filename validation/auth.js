@@ -1,5 +1,10 @@
 import {body} from "express-validator";
 
+export const loginValidation = [ // валидация
+    body('email', "Неверный емайл").isEmail(),
+    body('password',"Длина пароля менее 5 символов").isLength({min: 5})
+]
+
 export const registerValidation = [ // валидация
     body('email', "Неверный емайл").isEmail(),
     body('password',"Длина пароля менее 5 символов").isLength({min: 5}),
