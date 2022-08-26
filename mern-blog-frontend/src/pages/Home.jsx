@@ -13,6 +13,9 @@ export const Home = () => {
 
     const dispatch = useDispatch();
     const { posts, tags } = useSelector(state => state.posts)
+    const userData = useSelector(state => state.auth.data)
+
+
 
     useEffect(() => {
         dispatch(fetchPosts())
@@ -23,7 +26,7 @@ export const Home = () => {
     const isPostsLoading = posts.status === 'loading'
     const isTagsLoading = tags.status === 'loading'
 
-  return (
+    return (
     <>
       <Tabs style={{ marginBottom: 15 }} value={0} aria-label="basic tabs example">
         <Tab label="Новые" />
@@ -44,7 +47,7 @@ export const Home = () => {
                           isLoading={false}
                           commentsCount={3}
                           tags={obj.tags}
-                          isEditable
+                          isEditable={userData?.data?._id === obj.user._id}
                       />)
           ))}
         </Grid>

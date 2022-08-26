@@ -18,8 +18,8 @@ export const Login = () => {
 
     const {register, handleSubmit, setError, formState: {errors, isValid}} = useForm({ // Form library on
         defaultValues: {
-            email: 'eeeeee@gmail.com',
-            password: 'wwwwwwww'
+            email: 'Vasya@gmail.com',
+            password: '12345'
         },
         mode: 'onChange'
     })
